@@ -40,7 +40,7 @@ The 12 CSV files were combined via the 'Union' function into a new single table 
 
 In addition to the 'Union' joins, a variety of aggregations were used, as was extraction of datetime components from 'varchar' date strings and substring extractions of locations from 'varchar' address values. CTEs, Subqueries and Case Statements were used at various points.
 
-Despite the initial calculated values matching exactly those in the associated Excel analysis, very slight differences emerged (as small as 0.0003%) in the later explorations of categories and products. This prompted me to re-examine the Excel data and the discovery of minor inaccuracies in its analysis highlighted very clearly the value of examining data from multiple angles, particularly in the absence of other assisting analysts. As the three-tier approach of analysing this data using Excel, SQL and Power BI was focused on the overall differences in process, this analysis as outlined is presented here while I further consider the minor variations in values. 
+Despite the initial calculated values being very similar to the associated Excel analysis, slight differences existed (approximately 0.1% in cases). This discovery highlighted very clearly the value of examining data from multiple angles, particularly in the absence of other assisting analysts. As the three-tier approach of analysing this data using Excel, SQL and Power BI was focused on the overall differences in process, this analysis as outlined is presented here while I further consider the minor variations in values. 
 
 Finally, the posed questions were answered as follows:
 
