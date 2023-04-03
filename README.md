@@ -36,19 +36,19 @@ Order Date: The date the customer is requesting the order be shipped.
 
 Purchase Address: Prepared by the buyer, often through a purchasing department. The purchase order, or PO, usually includes a PO number, which is useful in matching shipments with purchases; a shipping date; billing address; shipping address; and the request items, quantities and price.
 
-The 12 CSV files were combined via the 'Union' function into a new single table with duplicates removed. The resulting data was explored in general and two rows with blank and generic “Product”, “Order Date” and “Purchase Address” values, as well as 34 rows with dates outside of 2019, were removed. Some column types were converted from 'varchar' to numeric types to enable desired aggregations. At this stage, and for much of the subsequent stages, the data and calculated values mirrored that of the Excel analysis. 
+The 12 CSV files were combined via the 'Union All' function into a new single table. The resulting data was explored in general and rows with blank and generic “Product”, “Order Date” and “Purchase Address” values, as well as 34 rows with dates outside of 2019, were removed. Some column types were converted from 'varchar' to numeric types to enable desired aggregations. 
 
-In addition to the 'Union' joins, a variety of aggregations were used, as was extraction of datetime components from 'varchar' date strings and substring extractions of locations from 'varchar' address values. CTEs, Subqueries and Case Statements were used at various points.
+In addition to the 'Union All' joins, a variety of aggregations were used, as was extraction of datetime components from 'varchar' date strings and substring extractions of locations from 'varchar' address values. CTEs, Subqueries and Case Statements were used at various points.
 
-Despite the initial calculated values being very similar to the associated Excel analysis, slight differences existed (approximately 0.08% in cases). This discovery highlighted very clearly the value of examining data from multiple angles, particularly in the absence of other assisting analysts. As the three-tier approach of analysing this data using Excel, SQL and Power BI was focused on the overall differences in process, this analysis as outlined is presented here while I further consider the minor variations in values. 
+Despite the initial calculated values being identical to those in the associated Excel analysis, slight differences emerged when analysing the categories of products. This discovery highlighted very clearly the value of examining data from multiple angles, particularly in the absence of other assisting analysts. The SQL queries at this stage were re-examined and found to be calculating totals without the correct use of individual item prices. A second CTE was added and additional adjustments yielded values consistent with the Excel analysis. 
 
 Finally, the posed questions were answered as follows:
 
-What was the total sales amount for that year? $34,456,868
+What was the total sales amount for that year? $34,483,366 
 
-What was the best month for sales? How much was earned that month? December, $4,608,296
+What was the best month for sales? How much was earned that month? December, $4,613,443 
 
-Which state had the highest total sales? How much? California, $13,699,563
+Which state had the highest total sales? How much? California, $13,711,290 
 
 Which city had the highest number of sales? San Francisco, CA
 
@@ -56,6 +56,6 @@ What time should we display advertisements to maximise the likelihood of custome
 
 Which category of products is sold most often? Batteries
 
-Which category of products generated the highest sales? How much? Laptops, $12,156,800
+Which category of products generated the highest sales? How much? Laptops, $12,163,859 
 
 Which product sold the most? Why do you think it sold the most? AAA batteries (4-pack), followed by AA batteries (4-pack), charging cables and headphones. These products are the cheapest in the list and are also known to run out or failure regularly.
