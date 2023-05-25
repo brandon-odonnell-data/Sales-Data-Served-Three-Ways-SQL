@@ -1,6 +1,6 @@
 # Sales-Data-Served-Three-Ways-SQL
 
-Tools and Languages: SQL (see associated Excel and Power BI (coming soon) projects)
+Tools and Languages: SQL, SQL Server (see associated Excel and Power BI projects)
 
 Description and Intent: This analysis of electronics, appliances and accessories sales data from the USA, derived from twelve Kaggle CSV files spanning the entirety of 2019, was conducted to answer the files' associated series of questions (updated slightly to reflect different/additional queries):
 
